@@ -88,6 +88,11 @@ Open a new terminal window, activate your virtual environment, and start the vLL
 ```bash
 uv run vllm serve google/medgemma-27b-it --tensor-parallel-size 4 --async-scheduling
 ```
+If you got "torch.OutOfMemoryError: CUDA out of memory" error, you may start the vLLM server with the command specified above.
+
+```bash
+PYTORCH_ALLOC_CONF=expandable_segments:True uv run vllm serve google/medgemma-27b-it --tensor-parallel-size 4 --async-scheduling --max-model-len 65536 --max-num-seqs 8
+```
 
 Leave this terminal running. It will handle all the model inference requests. By default, it will be available at `http://localhost:8000`.
 
