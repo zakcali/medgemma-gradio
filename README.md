@@ -186,7 +186,7 @@ Here are its key advantages, which directly translate to the speed you will expe
 ### Migration to Gradio 6.0 interface
 `medgemma-gradio.py` file migrated to **Gradio 6.0**:
 
-### 1. The Chatbot Component
+### The Chatbot Component
 **Change:** Removed `type="messages"` and replaced `show_copy_button=True` with `buttons=["copy"]`.
 
 ```python
