@@ -149,7 +149,7 @@ with gr.Blocks(title="💬 Local LLM Chatbot (Multimodal)") as demo:
 
     with gr.Row():
         with gr.Column(scale=3):
-            chatbot = gr.Chatbot(height=500, type="messages", show_copy_button=True, label="Conversation")
+            chatbot = gr.Chatbot(height=500, buttons=["copy"], label="Conversation")
             with gr.Row():
                 msg = gr.Textbox(placeholder="Type a message...", scale=4, show_label=False)
                 send_btn = gr.Button("Send", scale=1, variant="primary")
