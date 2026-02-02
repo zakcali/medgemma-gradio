@@ -183,6 +183,20 @@ Here are its key advantages, which directly translate to the speed you will expe
 
 **Conclusion:** Using vLLM as the backend for your Gradio application is the correct one. You are leveraging a production-grade inference engine. The API call from your Python script will be a lightweight network request to a hyper-optimized server that is running the model far more efficiently than a direct `transformers` implementation ever could in a multi-request scenario.
 
+### Migration to Gradio 6.0 interface
+`medgemma-gradio.py` file migrated to **Gradio 6.0**:
+
+### 1. The Chatbot Component
+**Change:** Removed `type="messages"` and replaced `show_copy_button=True` with `buttons=["copy"]`.
+
+```python
+# OLD
+chatbot = gr.Chatbot(height=500, type="messages", show_copy_button=True, label="Conversation")
+
+# NEW
+chatbot = gr.Chatbot(height=500, buttons=["copy"], label="Conversation")
+```
+
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
